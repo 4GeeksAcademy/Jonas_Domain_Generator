@@ -1,31 +1,40 @@
-let myDomain = '';
-
-let pronounArray = ['the', 'our', 'my', 'your'];
-let adjArray = ['great', 'big', 'best', 'awesome'];
-let nounArray = ['jogger', 'racoon', 'website', 'space'];
-let domainArray = ['.com', '.net', '.us', '.io']
-
-let pronounRandom = Math.floor(Math.random()*10)*pronounArray.length;
-let adjRandom = Math.floor(Math.random()*10)*adjArray.length;
-let nounRandom = Math.floor(Math.random()*10)*nounArray.length;
-let domainRandom = Math.floor(Math.random()*10)*domainArray.length;
-
 function domainGenerator () {
-  for (let i = 0; i = pronounRandom; i++) {
-    let pronoun = pronounArray[i];
-    for (let i = 0; i = adjRandom; i++) {
-      let adj = adjArray[i];
-      for (let i = 0; i = nounRandom; i++) {
-        let noun = nounArray[i];
-        for (let i = 0; i = domainRandom; i++) {
-          let domain = domainArray[i];
+
+let pronounArray = ['the', 'our', 'my',];
+let adjArray = ['great', 'big', 'awesome'];
+let nounArray = ['jogger', 'racoon', 'website',];
+let domainArray = ['.com', '.net', '.org',]
+
+let = domainList = [];
+
+
+  for (let pronoun of pronounArray) {
+    for (let adj of adjArray) {
+      for (let noun of nounArray) {
+        for (let domain of domainArray) {
+          domainList.push(`${pronoun}${adj}${noun}${domain}`);
         }
-      }
     }
   }
-    return '${pronoun}${adj}${noun}';
 }
 
+domainList.sort();
 
+return domainList;
 
-console.log(domainGenerator());
+}
+
+// Función para mostrar los dominios en la página
+function showDomains() {
+  let listaHTML = document.getElementById("lista-dominios");
+  let dominios = domainGenerator();
+
+  dominios.forEach(dominio => {  // para cada dominio...
+      let li = document.createElement("li"); // Crear un elemento <li></li> en memoria, pero aún no en el DOM -->
+      li.textContent = dominio; // Asignar el dominio como texto
+      listaHTML.appendChild(li);  // Agregar <li> dentro del <ul>
+  });
+}
+
+// Ejecutar la función cuando la página se cargue
+window.onload = showDomains;
