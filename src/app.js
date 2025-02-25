@@ -30,16 +30,16 @@ function showDomains() {
   let dominios = domainGenerator();
 
   dominios.forEach(dominio => {  // para cada dominio...
-      let li = document.createElement("li"); // Crear un elemento <li></li> en memoria, pero no en el DOM aún... -->
+      let li = document.createElement("li"); // Crear un elemento <li></li> en memoria, pero no en el DOM aún...
       let link = document.createElement("a") // crear un elemento <a>
 
-      link.textContent = dominio; // incluye el dominio como texto
-      link.href = `https://${dominio}`; // crea el link
-      link.target = "_blank"; // abre en una nueva pestaña
-      link.classList.add("enlace-dominio"); // Agrega una clase para dar estilo
+      link.textContent = dominio; // hace que el texto del link sea el dominio
+      link.href = `https://${dominio}`; // crea el link completo
+      link.target = "_blank"; // lo abre en una pestaña nueva
+      link.classList.add("enlace-dominio"); // Agrega una clase "enlace-dominio" para dar estilo con CSS
 
       li.appendChild(link); // agrega <a> dentro de <li>
-      listaHTML.appendChild(li);  // Agregar <li> dentro del <ul> a través de listaHTML
+      listaHTML.appendChild(li);  // Agregar <li> dentro del <ul> a través de listaHTML que, a su vez, toma el id "lista-dominios" del HTML
   });
 }
 
