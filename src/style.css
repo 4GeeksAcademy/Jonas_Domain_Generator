@@ -1,4 +1,67 @@
 
 body{
-    background: white;
+    background: rgb(109, 187, 252);
+    font-family:  Impact;
+    padding: 30px;
+    margin: 0; /* Elimina márgenes del body */
+    display: flex; /* Activamos Flexbox */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    box-sizing: border-box; /* Asegura que el tamaño de los elementos se mida correctamente */
+}
+
+.container {
+    width: 30rem; /* Definimos el ancho del container */
+    background: rgb(153, 67, 67);
+    border-radius: 10px; /* Opcional, para bordes redondeados */
+    padding: 20px;
+    display: flex; /* Usamos flexbox en el contenedor */
+    justify-content: center; /* Centra el subcontainer horizontalmente */
+    align-items: center; /* Centra el subcontainer verticalmente */
+    height: 100%; /* Asegura que el container ocupe toda la altura disponible */
+}
+
+.subcontainer{
+    width: 30rem; /* Definimos un tamaño fijo para el subcontainer */
+    padding: 20px;
+    background: rgb(202, 144, 144);
+    border-radius: 10px; /* Opcional, para bordes redondeados */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Agrega sombra suave */
+    margin: 0; /* Elimina el margen del subcontainer */
+    max-height: 80vh; /* Asegura que el subcontainer no se desborde verticalmente */
+    overflow: auto; /* Si el contenido se excede, agrega scroll */
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: rgb(109, 187, 252);
+    -webkit-text-stroke: 0.5px rgb(116, 49, 49); /* Contorno negro */
+    margin: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    padding: 2px;
+}
+
+.enlace-dominio {
+    text-decoration: none;
+    font-size: 24px;
+    color: #ffffff;
+    -webkit-text-stroke: 0.5px black; /* Contorno negro */
+    transition: color 0.3s ease, transform 0.2s ease;
+    
+}
+
+.enlace-dominio:hover {
+    color: #ffae00; /* Amarillo-anaranjado */
+    text-shadow: 0px 0px 10px rgba(255, 174, 0, 0.8); /* Resplandor */
+    transform: scale(1.1); /* Agrandar en hover */
 }
